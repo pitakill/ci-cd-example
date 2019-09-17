@@ -12,5 +12,5 @@ func main() {
 }
 
 func root(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(":-P version 1"))
+	w.Write([]byte(":-) version 2"))
 }
