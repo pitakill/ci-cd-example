@@ -21,7 +21,7 @@ func TestServer(t *testing.T) {
 		t.Errorf("Status code differs. Expected %q.\nGot %q instead", http.StatusOK, status)
 	}
 
-	expected := ":-P version 1"
+	expected := ":-) version 2"
 
 	if !reflect.DeepEqual(expected, rr.Body.String()) {
 		t.Errorf("Response differs. Expected %q.\nGot %q instead", expected, rr.Body.String())
