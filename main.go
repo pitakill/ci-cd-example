@@ -1,12 +1,19 @@
 package main
 
-import "net/http"
-
-var addr = ":8080"
+import (
+	"net/http"
+	"os"
+)
 
 func main() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		panic("$PORT must be set")
+	}
+
 	http.HandleFunc("/", root)
-	if err := http.ListenAndServe(addr, nil); err != nil {
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		panic(err)
 	}
 }
